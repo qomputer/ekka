@@ -86,7 +86,7 @@ autocluster(App, Fun) ->
                     wait_application_ready(App, 5),
                     try ekka_autocluster:discover_and_join(Fun)
                     catch
-                        _:Error -> lager:error("Autocluster exception: ~p", [Error])
+                        _:Error -> lager:error("Autocluster exception: ~p, stacktrace:~p", [Error, erlang:get_stacktrace()])
                     end,
                     ekka_autocluster:release_lock()
                   end);
