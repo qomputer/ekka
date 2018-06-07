@@ -22,6 +22,7 @@
 
 %% Cluster strategy callbacks.
 -export([discover/1, lock/1, unlock/1, register/1, unregister/1]).
+-compile([{parse_transform, lager_transform}]).
 
 -define(SERVICE_ACCOUNT_PATH, "/var/run/secrets/kubernetes.io/serviceaccount/").
 

@@ -18,6 +18,8 @@
 
 -include("ekka.hrl").
 
+-compile([{parse_transform, lager_transform}]).
+
 %% Start/Stop, and Env
 -export([start/0, env/1, env/2, stop/0]).
 

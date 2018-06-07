@@ -18,6 +18,8 @@
 
 -include("ekka.hrl").
 
+-compile([{parse_transform, lager_transform}]).
+
 -export([discover_and_join/1, unregister_node/0, aquire_lock/0, release_lock/0]).
 
 -define(LOG(Level, Format, Args),
