@@ -16,6 +16,10 @@
 
 -module(ekka_node_ttl).
 
+-compile([{parse_transform, lager_transform}]).
+
+-compile([{parse_transform, lager_transform}]).
+
 -behaviour(gen_statem).
 
 %% API

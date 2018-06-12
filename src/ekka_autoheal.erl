@@ -16,6 +16,8 @@
 
 -module(ekka_autoheal).
 
+-compile([{parse_transform, lager_transform}]).
+
 -export([init/0, enabled/0, proc/1, handle_msg/2]).
 
 -record(?MODULE, {role, proc, timer}).

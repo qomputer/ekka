@@ -20,6 +20,8 @@
 
 -include("ekka.hrl").
 
+-compile([{parse_transform, lager_transform}]).
+
 -export([start_link/0]).
 
 %% Members API
