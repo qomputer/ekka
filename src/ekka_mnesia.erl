@@ -19,7 +19,7 @@
 -include("ekka.hrl").
 
 %% Start and stop mnesia
--export([start/0, ensure_started/0, ensure_stopped/0, connect/1,wait_for/1]).
+-export([start/0, ensure_started/0, ensure_stopped/0, connect/1,wait_for/1, ensure_ok/1]).
 
 %% Cluster mnesia
 -export([join_cluster/1, leave_cluster/0, remove_from_cluster/1,
@@ -39,6 +39,7 @@
 %% @doc Start mnesia database
 -spec(start() -> ok).
 start() ->
+    kvs:join(),
     ensure_ok(ensure_data_dir()),
     ensure_ok(init_schema()),
     ok = mnesia:start(),
