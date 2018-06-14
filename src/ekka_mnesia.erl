@@ -39,7 +39,6 @@
 %% @doc Start mnesia database
 -spec(start() -> ok).
 start() ->
-    kvs:join(),
     ensure_ok(ensure_data_dir()),
     ensure_ok(init_schema()),
     ok = mnesia:start(),
@@ -291,7 +290,7 @@ wait_for(stop) ->
 
 wait_for(tables) ->
     Tables = mnesia:system_info(local_tables),
-    case mnesia:wait_for_tables(Tables, 600000) of
+    case mnesia:wait_for_tables(Tables, infinity) of
         ok                   -> ok;
         {error, Reason}      -> {error, Reason};
         {timeout, BadTables} -> {error, {timetout, BadTables}}
