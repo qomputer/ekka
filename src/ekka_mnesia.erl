@@ -19,7 +19,7 @@
 -include("ekka.hrl").
 
 %% Start and stop mnesia
--export([start/0, ensure_started/0, ensure_stopped/0, connect/1]).
+-export([start/0, ensure_started/0, ensure_stopped/0, connect/1,wait_for/1]).
 
 %% Cluster mnesia
 -export([join_cluster/1, leave_cluster/0, remove_from_cluster/1,
