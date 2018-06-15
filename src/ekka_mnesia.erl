@@ -41,7 +41,7 @@
 start() ->
     ensure_ok(ensure_data_dir()),
     ensure_ok(init_schema()),
-    ok = mnesia:start(),
+    mnesia:start(),
     init_tables(),
     wait_for(tables).
 
