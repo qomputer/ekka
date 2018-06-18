@@ -56,9 +56,9 @@ ignore_lib_apps(Apps) ->
     LibApps = [kernel, stdlib, sasl, appmon, eldap, erts,
                syntax_tools, ssl, crypto, mnesia, os_mon,
                inets, goldrush, lager, gproc, runtime_tools,
-               snmp, otp_mibs, public_key, asn1, ssh, hipe, n2o,
-               common_test, observer, webtool, xmerl, tools, kvs, syn,
-               test_server, compiler, debugger, eunit, et, roster, bpe,
+               snmp, otp_mibs, public_key, asn1, ssh, hipe,
+               common_test, observer, webtool, xmerl, tools,
+               test_server, compiler, debugger, eunit, et,
                wx],
     [App || App = {Name, _, _} <- Apps, not lists:member(Name, LibApps)].
 
