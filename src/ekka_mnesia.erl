@@ -43,8 +43,8 @@ start() ->
     ensure_ok(init_schema()),
     mnesia:start(),
     init_tables(),
-    wait_for(tables),
-    roster:load_db("log/db").
+    wait_for(tables).
+
 
 %% @private
 ensure_data_dir() ->
